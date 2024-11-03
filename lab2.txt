@@ -1,0 +1,55 @@
+USERS
+
+POST /users/register
+-> request body is an object with username, password and optional dietary preferences
+-> responds with the created user object (excluding password) with the _id created from the server
+-> responds with an error if username already exists
+
+POST /users/login
+-> request body is an object with username and password
+-> responds with a user object (excluding password) if login successful
+-> responds with an error if login fails
+
+GET /users/:id
+-> request header contains user_id
+-> responds with a user object (excluding password) with all associated meal plans
+-> responds with an error if no user was found
+-> responds with an error if user id and header user_id does not match
+
+PUT /users/:id
+-> request header contains user_id
+-> request body is an object with dietary preferences  (ex: { preferences: ['Paleo']})
+-> responds with the updated user object (excluding password)
+-> responds with an error if no user was found
+-> responds with an error if user id and header user_id does not match
+
+
+MEAL PLANS
+
+POST /mealplans
+-> request header contains user_id
+-> request body contains a week and meal object (ex: { week, mealId, name, diets, image })
+-> responds with the created and/or updated meal plan object with the _id created from the server
+-> responds with an error if meal plan already contains 3 meals
+-> responds with an error if no user was found
+-> responds with an error if user_id in meal plan and header user_id does not match
+
+
+DELETE /mealplans/:id
+-> request header contains user_id
+-> responds with confirmation and _id for the meal plan deleted
+-> responds with an error if no meal plan was found
+-> responds with an error if user_id in meal plan and header user_id does not match
+
+
+MEALS (Interact with Spoonacular API)
+
+GET /meals/search
+-> request header contains user_id
+-> app is able to get user preferences using the user_id in header
+-> query parameter for meal and diet preferences: ?meal=<name>&diets=<preferences>
+-> interacts with Spoonacular API to perform search using the query parameters above for keyword query and diets
+-----> (https://spoonacular.com/food-api/docs#Search-Recipes-Complex)
+-> responds with the response from Spoonacular which is an array of meal objects based on the search and diet preferences
+
+
