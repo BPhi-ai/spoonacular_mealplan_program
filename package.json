@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "npx nodemon app.js"
+    "dev": "npx nodemon script.js"
   },
   "author": "Brian Pham",
   "license": "ISC",
