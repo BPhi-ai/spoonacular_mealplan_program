@@ -1,19 +1,20 @@
 {
-  "name": "mealplan_program",
+  "name": "spoonacular_mealplan_app",
   "version": "1.0.0",
-  "description": "this is a program that will allow users to create/update their own mealplans based on their dietary preferences.",
+  "description": "This is a program that will allow users to create/update mealplans using the Spoonacular API.",
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "npx nodemon script.js"
+    "dev": "npx nodemon app.js"
   },
   "author": "Brian Pham",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0",
-    "mongoose": "^8.8.0"
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
