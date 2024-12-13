@@ -1,0 +1,23 @@
+{
+  "name": "mealplanner-app",
+  "version": "1.0.0",
+  "description": "This will be an application that will allow users to make mealplans using meals from the Spoonacular API. They will only be allowed to makemealplans that have 3 meals per week.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx nodemon app.js"
+  },
+  "author": "Brian Pham",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
